@@ -54,6 +54,7 @@ import mekanism.common.tile.TileEntityRotaryCondensentrator;
 import mekanism.common.tile.TileEntitySeismicVibrator;
 import mekanism.common.tile.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.TileEntityTeleporter;
+import mekanism.common.tile.TileEntityUltimateFactory;
 import mekanism.common.util.LangUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.IProperty;
@@ -84,7 +85,8 @@ public class BlockStateMachine extends ExtendedBlockState {
     public enum MachineBlock {
         MACHINE_BLOCK_1,
         MACHINE_BLOCK_2,
-        MACHINE_BLOCK_3;
+        MACHINE_BLOCK_3,
+        MACHINE_BLOCK_MODDED;
 
         PropertyEnum<MachineType> machineTypeProperty;
 
@@ -103,6 +105,8 @@ public class BlockStateMachine extends ExtendedBlockState {
                     return MekanismBlocks.MachineBlock2;
                 case MACHINE_BLOCK_3:
                     return MekanismBlocks.MachineBlock3;
+                case MACHINE_BLOCK_MODDED:
+                    return MekanismBlocks.MachineBlockModded;
                 default:
                     return null;
             }
@@ -148,7 +152,8 @@ public class BlockStateMachine extends ExtendedBlockState {
         OREDICTIONIFICATOR(MachineBlock.MACHINE_BLOCK_3, 3, "Oredictionificator", 52, TileEntityOredictionificator::new, false, false, false, Plane.HORIZONTAL, true),
         RESISTIVE_HEATER(MachineBlock.MACHINE_BLOCK_3, 4, "ResistiveHeater", 53, TileEntityResistiveHeater::new, true, false, false, Plane.HORIZONTAL, true),
         FORMULAIC_ASSEMBLICATOR(MachineBlock.MACHINE_BLOCK_3, 5, "FormulaicAssemblicator", 56, TileEntityFormulaicAssemblicator::new, true, false, true, Plane.HORIZONTAL, true),
-        FUELWOOD_HEATER(MachineBlock.MACHINE_BLOCK_3, 6, "FuelwoodHeater", 58, TileEntityFuelwoodHeater::new, false, false, false, Plane.HORIZONTAL, true);
+        FUELWOOD_HEATER(MachineBlock.MACHINE_BLOCK_3, 6, "FuelwoodHeater", 58, TileEntityFuelwoodHeater::new, false, false, false, Plane.HORIZONTAL, true),
+        ULTIMATE_FACTORY(MachineBlock.MACHINE_BLOCK_MODDED, 0, "Factory", 11, TileEntityUltimateFactory::new, true, false, true, Plane.HORIZONTAL, true, FactoryTier.ULTIMATE);
 
         public MachineBlock typeBlock;
         public int meta;
@@ -431,7 +436,7 @@ public class BlockStateMachine extends ExtendedBlockState {
                 builder.append(facing.getName());
             }
 
-            if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY) {
+            if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY || type == MachineType.ULTIMATE_FACTORY) {
                 RecipeType recipe = state.getValue(recipeProperty);
                 nameOverride = type.getName() + "_" + recipe.getName();
             }

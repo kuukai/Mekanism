@@ -163,6 +163,9 @@ tile.MachineBlock3.ResistiveHeater.name=Grzejnik rezystancyjny
 tile.MachineBlock3.FormulaicAssemblicator.name=Automat produkcyjny
 tile.MachineBlock3.FuelwoodHeater.name=Podgrzewacz na drewno opałowe
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=fabryka
+
 # Plastic
 tile.PlasticBlock.name=blok plastiku
 tile.SlickPlasticBlock.name=elastyczny blok plastiku

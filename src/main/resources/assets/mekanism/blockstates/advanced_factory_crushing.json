@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/crushing/right",
+      "front": "mekanism:blocks/factory/advanced/crushing/front",
+      "south": "mekanism:blocks/factory/advanced/crushing/back",
+      "west": "mekanism:blocks/factory/advanced/crushing/right",
+      "east": "mekanism:blocks/factory/advanced/crushing/left",
+      "up": "mekanism:blocks/factory/advanced/crushing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/crushing/AdvancedCrushingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/crushing/front_active",
+          "south": "mekanism:blocks/factory/advanced/crushing/back_active",
+          "west": "mekanism:blocks/factory/advanced/crushing/right_active",
+          "east": "mekanism:blocks/factory/advanced/crushing/left_active",
+          "up": "mekanism:blocks/factory/advanced/crushing/top_active"
         }
       },
       "false": {}

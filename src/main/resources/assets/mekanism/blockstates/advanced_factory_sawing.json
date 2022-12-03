@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryside",
-      "front": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryfront",
-      "south": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryback",
-      "west": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryside",
-      "east": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryside",
-      "up": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactorytop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/sawing/side",
+      "front": "mekanism:blocks/factory/advanced/sawing/front",
+      "south": "mekanism:blocks/factory/advanced/sawing/back",
+      "west": "mekanism:blocks/factory/advanced/sawing/side",
+      "east": "mekanism:blocks/factory/advanced/sawing/side",
+      "up": "mekanism:blocks/factory/advanced/sawing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactoryfronton",
-          "south": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactorybackon",
-          "west": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactorysideon",
-          "east": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactorysideon",
-          "up": "mekanism:blocks/factory/advanced/sawing/advancedsawingfactorytopon"
+          "front": "mekanism:blocks/factory/advanced/sawing/front_active",
+          "south": "mekanism:blocks/factory/advanced/sawing/back_active",
+          "west": "mekanism:blocks/factory/advanced/sawing/side_active",
+          "east": "mekanism:blocks/factory/advanced/sawing/side_active",
+          "up": "mekanism:blocks/factory/advanced/sawing/top_active"
         }
       },
       "false": {}

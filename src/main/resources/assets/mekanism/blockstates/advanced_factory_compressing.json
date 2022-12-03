@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/compressing/right",
+      "front": "mekanism:blocks/factory/advanced/compressing/front",
+      "south": "mekanism:blocks/factory/advanced/compressing/back",
+      "west": "mekanism:blocks/factory/advanced/compressing/right",
+      "east": "mekanism:blocks/factory/advanced/compressing/left",
+      "up": "mekanism:blocks/factory/advanced/compressing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/compressing/AdvancedCompressingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/compressing/front_active",
+          "south": "mekanism:blocks/factory/advanced/compressing/back_active",
+          "west": "mekanism:blocks/factory/advanced/compressing/right_active",
+          "east": "mekanism:blocks/factory/advanced/compressing/left_active",
+          "up": "mekanism:blocks/factory/advanced/compressing/top_active"
         }
       },
       "false": {}

@@ -159,6 +159,9 @@ tile.MachineBlock3.ResistiveHeater.name=Odporový Ohřívač
 tile.MachineBlock3.FormulaicAssemblicator.name=Skladač Formulí
 tile.MachineBlock3.FuelwoodHeater.name=Ohřívač na Palivové Dřevo
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Továrna
+
 # Plastic
 tile.PlasticBlock.name=Plastový Blok
 tile.SlickPlasticBlock.name=Uhlazený Plastový Blok

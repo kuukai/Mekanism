@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/purifying/right",
+      "front": "mekanism:blocks/factory/advanced/purifying/front",
+      "south": "mekanism:blocks/factory/advanced/purifying/back",
+      "west": "mekanism:blocks/factory/advanced/purifying/right",
+      "east": "mekanism:blocks/factory/advanced/purifying/left",
+      "up": "mekanism:blocks/factory/advanced/purifying/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/purifying/AdvancedPurifyingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/purifying/front_active",
+          "south": "mekanism:blocks/factory/advanced/purifying/back_active",
+          "west": "mekanism:blocks/factory/advanced/purifying/right_active",
+          "east": "mekanism:blocks/factory/advanced/purifying/left_active",
+          "up": "mekanism:blocks/factory/advanced/purifying/top_active"
         }
       },
       "false": {}

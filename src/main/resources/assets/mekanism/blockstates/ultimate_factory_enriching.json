@@ -1,0 +1,37 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "mekanism:machine",
+    "textures": {
+      "sides": "mekanism:blocks/factory/ultimate/enriching/right",
+      "front": "mekanism:blocks/factory/ultimate/enriching/front",
+      "south": "mekanism:blocks/factory/ultimate/enriching/back",
+      "west": "mekanism:blocks/factory/ultimate/enriching/right",
+      "east": "mekanism:blocks/factory/ultimate/enriching/left",
+      "up": "mekanism:blocks/factory/ultimate/enriching/top",
+      "down": "mekanism:blocks/factory/bottom"
+    }
+  },
+  "variants": {
+    "facing": {
+      "north": {},
+      "south": {"y": 180},
+      "east":  {"y": 90},
+      "west":  {"y": -90}
+    },
+    "active": {
+      "true": {
+        "textures": {
+          "front": "mekanism:blocks/factory/ultimate/enriching/front_active",
+          "south": "mekanism:blocks/factory/ultimate/enriching/back_active",
+          "west": "mekanism:blocks/factory/ultimate/enriching/right_active",
+          "east": "mekanism:blocks/factory/ultimate/enriching/left_active",
+          "up": "mekanism:blocks/factory/ultimate/enriching/top_active"
+        }
+      },
+      "false": {}
+    },
+    "inventory": [{}]
+  }
+}
+

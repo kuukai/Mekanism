@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryside",
-      "front": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryfront",
-      "south": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryback",
-      "west": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryside",
-      "east": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryside",
-      "up": "mekanism:blocks/factory/elite/sawing/elitesawingfactorytop",
-      "down": "mekanism:blocks/factory/elite/EliteFactoryBottom"
+      "sides": "mekanism:blocks/factory/elite/sawing/side",
+      "front": "mekanism:blocks/factory/elite/sawing/front",
+      "south": "mekanism:blocks/factory/elite/sawing/back",
+      "west": "mekanism:blocks/factory/elite/sawing/side",
+      "east": "mekanism:blocks/factory/elite/sawing/side",
+      "up": "mekanism:blocks/factory/elite/sawing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/elite/sawing/elitesawingfactoryfronton",
-          "south": "mekanism:blocks/factory/elite/sawing/elitesawingfactorybackon",
-          "west": "mekanism:blocks/factory/elite/sawing/elitesawingfactorysideon",
-          "east": "mekanism:blocks/factory/elite/sawing/elitesawingfactorysideon",
-          "up": "mekanism:blocks/factory/elite/sawing/elitesawingfactorytopon"
+          "front": "mekanism:blocks/factory/elite/sawing/front_active",
+          "south": "mekanism:blocks/factory/elite/sawing/back_active",
+          "west": "mekanism:blocks/factory/elite/sawing/side_active",
+          "east": "mekanism:blocks/factory/elite/sawing/side_active",
+          "up": "mekanism:blocks/factory/elite/sawing/top_active"
         }
       },
       "false": {}

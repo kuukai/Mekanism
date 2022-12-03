@@ -159,6 +159,9 @@ tile.MachineBlock3.ResistiveHeater.name=Aquecedor Resistivo
 tile.MachineBlock3.FormulaicAssemblicator.name=Montador Formular
 tile.MachineBlock3.FuelwoodHeater.name=Aquecedor Sólido
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Fábrica
+
 # Plastic
 tile.PlasticBlock.name=Bloco de Plástico
 tile.SlickPlasticBlock.name=Bloco de Plástico Liso

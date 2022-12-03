@@ -163,6 +163,9 @@ tile.MachineBlock3.ResistiveHeater.name=Устойчивый нагревате�
 tile.MachineBlock3.FormulaicAssemblicator.name=Формульный сборщик
 tile.MachineBlock3.FuelwoodHeater.name=Твердотопливный нагреватель
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Механизм
+
 # Plastic
 tile.PlasticBlock.name=Пластиковый блок
 tile.SlickPlasticBlock.name=Гладкий пластиковый блок

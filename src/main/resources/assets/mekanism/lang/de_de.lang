@@ -159,6 +159,9 @@ tile.MachineBlock3.ResistiveHeater.name=Stromwärmeheizung
 tile.MachineBlock3.FormulaicAssemblicator.name=Formelfertigungsfabrikator
 tile.MachineBlock3.FuelwoodHeater.name=Feuerholzverfeuerer
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Fabrik
+
 # Plastic
 tile.PlasticBlock.name=Plastikblock
 tile.SlickPlasticBlock.name=Glatter Plastikblock

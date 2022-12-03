@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/enriching/right",
+      "front": "mekanism:blocks/factory/advanced/enriching/front",
+      "south": "mekanism:blocks/factory/advanced/enriching/back",
+      "west": "mekanism:blocks/factory/advanced/enriching/right",
+      "east": "mekanism:blocks/factory/advanced/enriching/left",
+      "up": "mekanism:blocks/factory/advanced/enriching/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/enriching/AdvancedEnrichingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/enriching/front_active",
+          "south": "mekanism:blocks/factory/advanced/enriching/back_active",
+          "west": "mekanism:blocks/factory/advanced/enriching/right_active",
+          "east": "mekanism:blocks/factory/advanced/enriching/left_active",
+          "up": "mekanism:blocks/factory/advanced/enriching/top_active"
         }
       },
       "false": {}

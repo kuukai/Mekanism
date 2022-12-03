@@ -54,7 +54,8 @@ public class RecipeUtils {
     }
 
     private static boolean isFactory(ItemStack stack) {
-        return MachineType.get(stack) == MachineType.BASIC_FACTORY || MachineType.get(stack) == MachineType.ADVANCED_FACTORY || MachineType.get(stack) == MachineType.ELITE_FACTORY;
+        final MachineType machineType = MachineType.get(stack);
+        return machineType == MachineType.BASIC_FACTORY || machineType == MachineType.ADVANCED_FACTORY || machineType == MachineType.ELITE_FACTORY || machineType == MachineType.ULTIMATE_FACTORY;
     }
 
     public static ItemStack getCraftingResult(InventoryCrafting inv, ItemStack toReturn) {

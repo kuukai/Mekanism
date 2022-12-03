@@ -200,6 +200,7 @@ import mekanism.common.tile.TileEntitySeismicVibrator;
 import mekanism.common.tile.TileEntitySolarNeutronActivator;
 import mekanism.common.tile.TileEntityTeleporter;
 import mekanism.common.tile.TileEntityThermalEvaporationController;
+import mekanism.common.tile.TileEntityUltimateFactory;
 import mekanism.common.tile.prefab.TileEntityAdvancedElectricMachine;
 import mekanism.common.tile.prefab.TileEntityDoubleElectricMachine;
 import mekanism.common.tile.prefab.TileEntityElectricMachine;
@@ -320,6 +321,7 @@ public class ClientProxy extends CommonProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityThermalEvaporationController.class, new RenderThermalEvaporationController());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityThermodynamicConductor.class, new RenderThermodynamicConductor());
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityUniversalCable.class, new RenderUniversalCable());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityUltimateFactory.class, new RenderConfigurableMachine<>());
     }
 
     @Override
@@ -394,6 +396,7 @@ public class ClientProxy extends CommonProxy {
         Item.getItemFromBlock(MekanismBlocks.MachineBlock).setTileEntityItemStackRenderer(new RenderMachineItem());
         Item.getItemFromBlock(MekanismBlocks.MachineBlock2).setTileEntityItemStackRenderer(new RenderMachineItem());
         Item.getItemFromBlock(MekanismBlocks.MachineBlock3).setTileEntityItemStackRenderer(new RenderMachineItem());
+        Item.getItemFromBlock(MekanismBlocks.MachineBlockModded).setTileEntityItemStackRenderer(new RenderMachineItem());
         Item.getItemFromBlock(MekanismBlocks.BasicBlock2).setTileEntityItemStackRenderer(new RenderBasicBlockItem());
     }
 
@@ -406,6 +409,7 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomStateMapper(MekanismBlocks.MachineBlock, machineMapper);
         ModelLoader.setCustomStateMapper(MekanismBlocks.MachineBlock2, machineMapper);
         ModelLoader.setCustomStateMapper(MekanismBlocks.MachineBlock3, machineMapper);
+        ModelLoader.setCustomStateMapper(MekanismBlocks.MachineBlockModded, machineMapper);
         ModelLoader.setCustomStateMapper(MekanismBlocks.BasicBlock, basicMapper);
         ModelLoader.setCustomStateMapper(MekanismBlocks.BasicBlock2, basicMapper);
         ModelLoader.setCustomStateMapper(MekanismBlocks.PlasticBlock, plasticMapper);
@@ -450,7 +454,7 @@ public class ClientProxy extends CommonProxy {
             String resource = "mekanism:" + type.getName();
             RecipeType recipePointer = null;
 
-            if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY) {
+            if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY || type == MachineType.ULTIMATE_FACTORY) {
                 recipePointer = RecipeType.values()[0];
                 resource = "mekanism:" + type.getName() + "_" + recipePointer.getName();
             }
@@ -470,7 +474,7 @@ public class ClientProxy extends CommonProxy {
                     machineResources.put(resource, model);
                     modelsToAdd.add(model);
 
-                    if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY) {
+                    if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY || type == MachineType.ULTIMATE_FACTORY) {
                         if (recipePointer.ordinal() < RecipeType.values().length - 1) {
                             recipePointer = RecipeType.values()[recipePointer.ordinal() + 1];
                             resource = "mekanism:" + type.getName() + "_" + recipePointer.getName();
@@ -580,7 +584,7 @@ public class ClientProxy extends CommonProxy {
             MachineType type = MachineType.get(stack);
             if (type != null) {
                 String resource = "mekanism:" + type.getName();
-                if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY) {
+                if (type == MachineType.BASIC_FACTORY || type == MachineType.ADVANCED_FACTORY || type == MachineType.ELITE_FACTORY || type == MachineType.ULTIMATE_FACTORY) {
                     RecipeType recipe = ((ItemBlockMachine) stack.getItem()).getRecipeTypeOrNull(stack);
                     if (recipe != null) {
                         resource = "mekanism:" + type.getName() + "_" + recipe.getName();
@@ -594,6 +598,7 @@ public class ClientProxy extends CommonProxy {
         ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(MekanismBlocks.MachineBlock), machineMesher);
         ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(MekanismBlocks.MachineBlock2), machineMesher);
         ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(MekanismBlocks.MachineBlock3), machineMesher);
+        ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(MekanismBlocks.MachineBlockModded), machineMesher);
 
         ItemMeshDefinition basicMesher = stack -> {
             BasicBlockType type = BasicBlockType.get(stack);
@@ -911,7 +916,7 @@ public class ClientProxy extends CommonProxy {
                 return (int) (color.getColor(0) * 255) << 16 | (int) (color.getColor(1) * 255) << 8 | (int) (color.getColor(2) * 255);
             }
             return -1;
-        }, MekanismBlocks.MachineBlock, MekanismBlocks.MachineBlock2, MekanismBlocks.MachineBlock3);
+        }, MekanismBlocks.MachineBlock, MekanismBlocks.MachineBlock2, MekanismBlocks.MachineBlock3, MekanismBlocks.MachineBlockModded);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler((state, worldIn, pos, tintIndex) -> {
                   EnumDyeColor color = state.getValue(colorProperty);
                   EnumColor dye = EnumColor.DYES[color.getDyeDamage()];
@@ -924,7 +929,7 @@ public class ClientProxy extends CommonProxy {
                 return (int) (color.getColor(0) * 255) << 16 | (int) (color.getColor(1) * 255) << 8 | (int) (color.getColor(2) * 255);
             }
             return -1;
-        }, MekanismBlocks.MachineBlock, MekanismBlocks.MachineBlock2, MekanismBlocks.MachineBlock3);
+        }, MekanismBlocks.MachineBlock, MekanismBlocks.MachineBlock2, MekanismBlocks.MachineBlock3, MekanismBlocks.MachineBlockModded);
         Minecraft.getMinecraft().getItemColors().registerItemColorHandler((stack, tintIndex) -> {
                   EnumDyeColor dyeColor = EnumDyeColor.byDyeDamage(stack.getItemDamage() & 15);
                   EnumColor dye = EnumColor.DYES[dyeColor.getDyeDamage()];

@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryRight",
-      "front": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryFront",
-      "south": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryBack",
-      "west": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryRight",
-      "east": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryLeft",
-      "up": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryTop",
-      "down": "mekanism:blocks/factory/basic/BasicFactoryBottom"
+      "sides": "mekanism:blocks/factory/basic/injecting/right",
+      "front": "mekanism:blocks/factory/basic/injecting/front",
+      "south": "mekanism:blocks/factory/basic/injecting/back",
+      "west": "mekanism:blocks/factory/basic/injecting/right",
+      "east": "mekanism:blocks/factory/basic/injecting/left",
+      "up": "mekanism:blocks/factory/basic/injecting/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryBackOn",
-          "west": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryRightOn",
-          "east": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/basic/injecting/BasicInjectingFactoryTopOn"
+          "front": "mekanism:blocks/factory/basic/injecting/front_active",
+          "south": "mekanism:blocks/factory/basic/injecting/back_active",
+          "west": "mekanism:blocks/factory/basic/injecting/right_active",
+          "east": "mekanism:blocks/factory/basic/injecting/left_active",
+          "up": "mekanism:blocks/factory/basic/injecting/top_active"
         }
       },
       "false": {}

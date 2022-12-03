@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryRight",
-      "front": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryFront",
-      "south": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryBack",
-      "west": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryRight",
-      "east": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryLeft",
-      "up": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryTop",
-      "down": "mekanism:blocks/factory/elite/EliteFactoryBottom"
+      "sides": "mekanism:blocks/factory/elite/smelting/right",
+      "front": "mekanism:blocks/factory/elite/smelting/front",
+      "south": "mekanism:blocks/factory/elite/smelting/back",
+      "west": "mekanism:blocks/factory/elite/smelting/right",
+      "east": "mekanism:blocks/factory/elite/smelting/left",
+      "up": "mekanism:blocks/factory/elite/smelting/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryBackOn",
-          "west": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryRightOn",
-          "east": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/elite/smelting/EliteSmeltingFactoryTopOn"
+          "front": "mekanism:blocks/factory/elite/smelting/front_active",
+          "south": "mekanism:blocks/factory/elite/smelting/back_active",
+          "west": "mekanism:blocks/factory/elite/smelting/right_active",
+          "east": "mekanism:blocks/factory/elite/smelting/left_active",
+          "up": "mekanism:blocks/factory/elite/smelting/top_active"
         }
       },
       "false": {}

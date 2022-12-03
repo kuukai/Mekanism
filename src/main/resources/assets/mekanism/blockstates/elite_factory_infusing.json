@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryRight",
-      "front": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryFront",
-      "south": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryBack",
-      "west": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryRight",
-      "east": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryLeft",
-      "up": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryTop",
-      "down": "mekanism:blocks/factory/elite/EliteFactoryBottom"
+      "sides": "mekanism:blocks/factory/elite/infusing/right",
+      "front": "mekanism:blocks/factory/elite/infusing/front",
+      "south": "mekanism:blocks/factory/elite/infusing/back",
+      "west": "mekanism:blocks/factory/elite/infusing/right",
+      "east": "mekanism:blocks/factory/elite/infusing/left",
+      "up": "mekanism:blocks/factory/elite/infusing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryBackOn",
-          "west": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryRightOn",
-          "east": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/elite/infusing/EliteInfusingFactoryTopOn"
+          "front": "mekanism:blocks/factory/elite/infusing/front_active",
+          "south": "mekanism:blocks/factory/elite/infusing/back_active",
+          "west": "mekanism:blocks/factory/elite/infusing/right_active",
+          "east": "mekanism:blocks/factory/elite/infusing/left_active",
+          "up": "mekanism:blocks/factory/elite/infusing/top_active"
         }
       },
       "false": {}

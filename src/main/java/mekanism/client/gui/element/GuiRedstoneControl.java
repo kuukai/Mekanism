@@ -24,21 +24,21 @@ public class GuiRedstoneControl extends GuiTileEntityElement<TileEntity> {
 
     @Override
     public Rectangle4i getBounds(int guiWidth, int guiHeight) {
-        return new Rectangle4i(guiWidth + 176, guiHeight + 138, 26, 26);
+        return new Rectangle4i(guiWidth + this.guiXSize, guiHeight + 138, 26, 26);
     }
 
     @Override
     protected boolean inBounds(int xAxis, int yAxis) {
-        return xAxis >= 179 && xAxis <= 197 && yAxis >= 142 && yAxis <= 160;
+        return xAxis >= this.guiXSize + 3 && xAxis <= this.guiXSize + 21 && yAxis >= 142 && yAxis <= 160;
     }
 
     @Override
     public void renderBackground(int xAxis, int yAxis, int guiWidth, int guiHeight) {
         mc.renderEngine.bindTexture(RESOURCE);
-        guiObj.drawTexturedRect(guiWidth + 176, guiHeight + 138, 0, 0, 26, 26);
+        guiObj.drawTexturedRect(guiWidth + this.guiXSize, guiHeight + 138, 0, 0, 26, 26);
         IRedstoneControl control = (IRedstoneControl) tileEntity;
         int renderX = 26 + (18 * control.getControlType().ordinal());
-        guiObj.drawTexturedRect(guiWidth + 179, guiHeight + 142, renderX, inBounds(xAxis, yAxis) ? 0 : 18, 18, 18);
+        guiObj.drawTexturedRect(guiWidth + this.guiXSize + 3, guiHeight + 142, renderX, inBounds(xAxis, yAxis) ? 0 : 18, 18, 18);
         mc.renderEngine.bindTexture(defaultLocation);
     }
 
