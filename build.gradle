@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         maven {
             name "forge"
             url "https://files.minecraftforge.net/maven"
@@ -16,8 +16,6 @@ plugins {
     id "com.matthewprenger.cursegradle" version "1.3.0"
     id 'java'
     id 'idea'
-    id 'maven'
-    id 'maven-publish'
 }
 
 defaultTasks 'fullBuild'
@@ -34,7 +32,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 repositories {
     maven {
         name 'ForgeFS'
-        url 'https://files.minecraftforge.net/maven'
+        url 'https://maven.minecraftforge.net'
     }
     maven {
         name 'amadornes'
@@ -46,7 +44,7 @@ repositories {
     }
     maven {
         name 'tesla'
-        url 'https://maven.mcmoddev.com'
+        url 'https://maven.blamejared.com'
     }
     maven {
         name 'curseforge'
@@ -80,10 +78,6 @@ repositories {
         name 'thiakil'
         url 'https://maven.thiakil.com'
     }
-    maven {
-        name 'hwyla'
-        url 'https://maven.tehnut.info'
-    }
 }
 
 group = "mekanism"
@@ -116,7 +110,6 @@ dependencies {
     compileOnly "inventory-tweaks:InventoryTweaks:${invtweak_version}:api"
     compileOnly "li.cil.oc:OpenComputers:MC${minecraft_version}-${opencomputers_version}:api"
     // Not updated yet
-    compileOnly "mcp.mobius.waila:Hwyla:${hwyla_version}:api"
     deobfCompile "cofh:RedstoneFlux:1.12-${redstoneflux_version}:universal"
     compileOnly "com.mod-buildcraft:buildcraft-api:${buildcraft_version}"
     compileOnly "team.chisel.ctm:CTM:MC${minecraft_version}-${ctm_version}:api"
@@ -130,9 +123,6 @@ dependencies {
     }
     compileOnly "dan200.computercraft:ComputerCraft:${computercraft_version}:api"
     compileOnly "mcjty.theoneprobe:TheOneProbe-1.12:${top_version}:api"
-    compileOnly("appeng:appliedenergistics2:${ae2_version}:api") {
-        exclude module: "jei_1.12.2"
-    }
 }
 
 processResources {
@@ -240,134 +230,4 @@ runClient {
 
 runServer {
     jvmArgs "-Dfml.coreMods.load=mekanism.coremod.MekanismCoremod"
-}
-
-uploadArchives {
-    if(System.getenv("LOCAL_MAVEN") != null) {
-        repositories {
-            mavenDeployer {
-                repository(url: "file://"+System.getenv("LOCAL_MAVEN"))
-                pom {
-                    groupId = project.group
-                    version = project.version
-                    if (System.getenv("MAVEN_ARTIFACT") != null) {
-                        artifactId = System.getenv("MAVEN_ARTIFACT")
-                    } else {
-                        artifactId = "Mekanism"
-                    }
-                    project {
-                        name = "Mekanism"
-                        packaging 'jar'
-                        description 'Mekanism is a Minecraft add-on featuring high-tech machinery that can be used to create powerful tools, armor, and weapons.'
-                        url 'http://aidancbrady.com/mekanism/'
-                        scm {
-                            url 'https://github.com/mekanism-mod/Mekanism.git'
-                        }
-                        issueManagement {
-                            system 'github'
-                            url 'https://github.com/mekanism-mod/Mekanism/issues'
-                        }
-                        licenses {
-                            license {
-                                name = 'MIT'
-                                distribution 'repo'
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-tasks.curseforge.dependsOn coreJar, toolsJar, generatorsJar, apiJar
-
-if (System.getenv("CURSEFORGE_KEY") != null || project.hasProperty('curseforgeKey')) {
-    println "Enabling Curseforge config"
-    curseforge {
-        apiKey = System.getenv("CURSEFORGE_KEY") ?: project.findProperty("curseforgeKey")
-
-        def generatedChangelog = "Unable to generate changelog :("
-        def currentCommit = System.getenv("GIT_COMMIT")
-        def prevCommit = System.getenv("GIT_PREVIOUS_SUCCESSFUL_COMMIT") ?: System.getenv("GIT_PREVIOUS_COMMIT")
-
-        if (currentCommit != null && prevCommit != null) {
-            generatedChangelog = "<pre>"
-            grgit.log {
-                range(prevCommit, currentCommit)
-            }.reverse().each { commit ->
-                String message = commit.shortMessage
-                if (!message.startsWith("Merge branch") && !message.startsWith("Merge pull request")) {//Ignore PRs and Merges
-                    message = message.replaceAll("#(\\d+)", {match->//turn issues/prs into links (github currently supports prs being linked as issues)
-                        return "<a href=\"https://github.com/mekanism-mod/Mekanism/issues/${match[1]}\">${match[0]}</a>"
-                    })
-                    generatedChangelog += "<a href=\"https://github.com/mekanism-mod/Mekanism/commit/${commit.id}\">${commit.getAbbreviatedId()}</a> - ${message}\n"
-                }
-            }
-            generatedChangelog += "</pre>"
-            println "Changelog generated"
-        }
-
-        def releaseNotesFile = project.file("docs/release_${mod_version}.html")
-        if (releaseNotesFile.exists()){
-            def releaseNotes = releaseNotesFile.getText()
-            generatedChangelog = "$releaseNotes<br> $generatedChangelog"
-        }
-
-        //Core
-        project {
-            id = '268560'
-            changelogType = "html"
-            changelog = generatedChangelog
-            // A file can also be set using: changelog = file('changelog.txt')
-            releaseType = 'release'
-            mainArtifact (coreJar){
-                relations {
-                    optionalDependency "jei"
-                    optionalDependency "crafttweaker"
-                    optionalDependency "industrial-craft"
-                    optionalDependency "mcmultipart"
-                    optionalDependency "tesla"
-                    optionalDependency "cc-tweaked"
-                    optionalDependency "the-one-probe"
-                    optionalDependency "hwyla"
-                    optionalDependency "applied-energistics-2"
-                    optionalDependency "redstone-flux"
-                    optionalDependency "metallurgy-4-reforged"
-                    optionalDependency "opencomputers"
-                    optionalDependency "cyclic"
-                }
-            }
-            addArtifact apiJar
-            addGameVersion '1.12.2'
-        }
-
-        //Tools
-        project {
-            id = '268567'
-            changelogType = "html"
-            changelog = generatedChangelog
-            releaseType = 'release'
-            mainArtifact(toolsJar){
-                relations {
-                    requiredDependency "mekanism"
-                }
-            }
-            addGameVersion '1.12.2'
-        }
-
-        //Generators
-        project {
-            id = '268566'
-            changelogType = "html"
-            changelog = generatedChangelog
-            releaseType = 'release'
-            mainArtifact(generatorsJar) {
-                relations {
-                    requiredDependency "mekanism"
-                }
-            }
-            addGameVersion '1.12.2'
-        }
-    }
 }
