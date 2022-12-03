@@ -163,6 +163,9 @@ tile.MachineBlock3.ResistiveHeater.name=Calentador resistivo
 tile.MachineBlock3.FormulaicAssemblicator.name=Ensamblador de fórmulas
 tile.MachineBlock3.FuelwoodHeater.name=Calentador de leña
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Fábrica
+
 # Plastic / Plástico
 tile.PlasticBlock.name=Bloque de plástico
 tile.SlickPlasticBlock.name=Bloque de plástico recubierto

@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryRight",
-      "front": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryFront",
-      "south": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryBack",
-      "west": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryRight",
-      "east": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryLeft",
-      "up": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryTop",
-      "down": "mekanism:blocks/factory/elite/EliteFactoryBottom"
+      "sides": "mekanism:blocks/factory/elite/combining/right",
+      "front": "mekanism:blocks/factory/elite/combining/front",
+      "south": "mekanism:blocks/factory/elite/combining/back",
+      "west": "mekanism:blocks/factory/elite/combining/right",
+      "east": "mekanism:blocks/factory/elite/combining/left",
+      "up": "mekanism:blocks/factory/elite/combining/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryFrontOn",
-          "south": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryBackOn",
-          "west": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryRightOn",
-          "east": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryLeftOn",
-          "up": "mekanism:blocks/factory/elite/combining/EliteCombiningFactoryTopOn"
+          "front": "mekanism:blocks/factory/elite/combining/front_active",
+          "south": "mekanism:blocks/factory/elite/combining/back_active",
+          "west": "mekanism:blocks/factory/elite/combining/right_active",
+          "east": "mekanism:blocks/factory/elite/combining/left_active",
+          "up": "mekanism:blocks/factory/elite/combining/top_active"
         }
       },
       "false": {}

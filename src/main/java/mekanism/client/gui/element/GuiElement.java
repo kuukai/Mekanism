@@ -21,10 +21,18 @@ public abstract class GuiElement {
     protected final IGuiWrapper guiObj;
     protected final ResourceLocation defaultLocation;
 
+    protected final int guiXSize;
+
     public GuiElement(ResourceLocation resource, IGuiWrapper gui, ResourceLocation def) {
         RESOURCE = resource;
         guiObj = gui;
         defaultLocation = def;
+
+        if (gui instanceof GuiContainer) {
+            this.guiXSize = ((GuiContainer) gui).getXSize();
+        } else {
+            this.guiXSize = 176;
+        }
     }
 
     public void displayTooltip(String s, int xAxis, int yAxis) {

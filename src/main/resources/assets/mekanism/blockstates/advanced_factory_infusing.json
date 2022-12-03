@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/infusing/right",
+      "front": "mekanism:blocks/factory/advanced/infusing/front",
+      "south": "mekanism:blocks/factory/advanced/infusing/back",
+      "west": "mekanism:blocks/factory/advanced/infusing/right",
+      "east": "mekanism:blocks/factory/advanced/infusing/left",
+      "up": "mekanism:blocks/factory/advanced/infusing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/infusing/AdvancedInfusingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/infusing/front_active",
+          "south": "mekanism:blocks/factory/advanced/infusing/back_active",
+          "west": "mekanism:blocks/factory/advanced/infusing/right_active",
+          "east": "mekanism:blocks/factory/advanced/infusing/left_active",
+          "up": "mekanism:blocks/factory/advanced/infusing/top_active"
         }
       },
       "false": {}

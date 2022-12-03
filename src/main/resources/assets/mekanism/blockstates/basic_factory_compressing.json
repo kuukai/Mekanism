@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryRight",
-      "front": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryFront",
-      "south": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryBack",
-      "west": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryRight",
-      "east": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryLeft",
-      "up": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryTop",
-      "down": "mekanism:blocks/factory/basic/BasicFactoryBottom"
+      "sides": "mekanism:blocks/factory/basic/compressing/right",
+      "front": "mekanism:blocks/factory/basic/compressing/front",
+      "south": "mekanism:blocks/factory/basic/compressing/back",
+      "west": "mekanism:blocks/factory/basic/compressing/right",
+      "east": "mekanism:blocks/factory/basic/compressing/left",
+      "up": "mekanism:blocks/factory/basic/compressing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryBackOn",
-          "west": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryRightOn",
-          "east": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/basic/compressing/BasicCompressingFactoryTopOn"
+          "front": "mekanism:blocks/factory/basic/compressing/front_active",
+          "south": "mekanism:blocks/factory/basic/compressing/back_active",
+          "west": "mekanism:blocks/factory/basic/compressing/right_active",
+          "east": "mekanism:blocks/factory/basic/compressing/left_active",
+          "up": "mekanism:blocks/factory/basic/compressing/top_active"
         }
       },
       "false": {}

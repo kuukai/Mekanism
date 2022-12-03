@@ -163,6 +163,9 @@ tile.MachineBlock3.ResistiveHeater.name=抵抗型発熱器
 tile.MachineBlock3.FormulaicAssemblicator.name=組立機
 tile.MachineBlock3.FuelwoodHeater.name=薪木ストーブ
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=ファクトリー
+
 # Plastic
 tile.PlasticBlock.name=プラスチックブロック
 tile.SlickPlasticBlock.name=滑らかなプラスチックブロック

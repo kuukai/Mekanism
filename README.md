@@ -1,5 +1,7 @@
 
-[![Build Status](https://travis-ci.org/aidancbrady/Mekanism.svg?branch=master)](https://travis-ci.org/aidancbrady/Mekanism)
+# :warning: 警告
+これはUltimate Factoryを独自にバックポートしたものです  
+私はメンテナではないため、いかなる不具合があっても対応いたしかねます
 
 # Mekanism for Minecraft 1.12 #
 

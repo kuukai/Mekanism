@@ -129,6 +129,9 @@ tile.MachineBlock2.LaserTractorBeam.name=Raggio traente laser
 tile.MachineBlock3.SolarNeutronActivator.name=Attivatore di neutroni solare
 tile.MachineBlock3.Oredictionificator.name=Oredictionificatore
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Fabbrica
+
 # Plastic
 tile.PlasticBlock.name=Blocco di plastica
 tile.SlickPlasticBlock.name=Blocco di plastica scivoloso

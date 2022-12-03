@@ -1,0 +1,37 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "mekanism:machine",
+    "textures": {
+      "sides": "mekanism:blocks/factory/ultimate/compressing/right",
+      "front": "mekanism:blocks/factory/ultimate/compressing/front",
+      "south": "mekanism:blocks/factory/ultimate/compressing/back",
+      "west": "mekanism:blocks/factory/ultimate/compressing/right",
+      "east": "mekanism:blocks/factory/ultimate/compressing/left",
+      "up": "mekanism:blocks/factory/ultimate/compressing/top",
+      "down": "mekanism:blocks/factory/bottom"
+    }
+  },
+  "variants": {
+    "facing": {
+      "north": {},
+      "south": {"y": 180},
+      "east":  {"y": 90},
+      "west":  {"y": -90}
+    },
+    "active": {
+      "true": {
+        "textures": {
+          "front": "mekanism:blocks/factory/ultimate/compressing/front_active",
+          "south": "mekanism:blocks/factory/ultimate/compressing/back_active",
+          "west": "mekanism:blocks/factory/ultimate/compressing/right_active",
+          "east": "mekanism:blocks/factory/ultimate/compressing/left_active",
+          "up": "mekanism:blocks/factory/ultimate/compressing/top_active"
+        }
+      },
+      "false": {}
+    },
+    "inventory": [{}]
+  }
+}
+

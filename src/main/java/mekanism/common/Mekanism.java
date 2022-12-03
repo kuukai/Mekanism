@@ -126,6 +126,7 @@ import mekanism.common.tile.TileEntityTeleporter;
 import mekanism.common.tile.TileEntityThermalEvaporationBlock;
 import mekanism.common.tile.TileEntityThermalEvaporationController;
 import mekanism.common.tile.TileEntityThermalEvaporationValve;
+import mekanism.common.tile.TileEntityUltimateFactory;
 import mekanism.common.tile.transmitter.TileEntityDiversionTransporter;
 import mekanism.common.tile.transmitter.TileEntityLogisticalTransporter;
 import mekanism.common.tile.transmitter.TileEntityMechanicalPipe;
@@ -729,6 +730,7 @@ public class Mekanism {
         registerTileEntity(TileEntityThermalEvaporationValve.class, "thermal_evaporation_valve");
         registerTileEntity(TileEntityThermodynamicConductor.class, "thermodynamic_conductor");
         registerTileEntity(TileEntityUniversalCable.class, "universal_cable");
+        registerTileEntity(TileEntityUltimateFactory.class, "modded_ultimate_smelting_factory");
 
         //Register the TESRs
         proxy.registerTESRs();

@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryRight",
-      "front": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryFront",
-      "south": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryBack",
-      "west": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryRight",
-      "east": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryLeft",
-      "up": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryTop",
-      "down": "mekanism:blocks/factory/elite/EliteFactoryBottom"
+      "sides": "mekanism:blocks/factory/elite/crushing/right",
+      "front": "mekanism:blocks/factory/elite/crushing/front",
+      "south": "mekanism:blocks/factory/elite/crushing/back",
+      "west": "mekanism:blocks/factory/elite/crushing/right",
+      "east": "mekanism:blocks/factory/elite/crushing/left",
+      "up": "mekanism:blocks/factory/elite/crushing/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryBackOn",
-          "west": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryRightOn",
-          "east": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/elite/crushing/EliteCrushingFactoryTopOn"
+          "front": "mekanism:blocks/factory/elite/crushing/front_active",
+          "south": "mekanism:blocks/factory/elite/crushing/back_active",
+          "west": "mekanism:blocks/factory/elite/crushing/right_active",
+          "east": "mekanism:blocks/factory/elite/crushing/left_active",
+          "up": "mekanism:blocks/factory/elite/crushing/top_active"
         }
       },
       "false": {}

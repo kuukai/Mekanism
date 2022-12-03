@@ -3,13 +3,13 @@
   "defaults": {
     "model": "mekanism:machine",
     "textures": {
-      "sides": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryRight",
-      "front": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryFront",
-      "south": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryBack",
-      "west": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryRight",
-      "east": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryLeft",
-      "up": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryTop",
-      "down": "mekanism:blocks/factory/advanced/AdvancedFactoryBottom"
+      "sides": "mekanism:blocks/factory/advanced/injecting/right",
+      "front": "mekanism:blocks/factory/advanced/injecting/front",
+      "south": "mekanism:blocks/factory/advanced/injecting/back",
+      "west": "mekanism:blocks/factory/advanced/injecting/right",
+      "east": "mekanism:blocks/factory/advanced/injecting/left",
+      "up": "mekanism:blocks/factory/advanced/injecting/top",
+      "down": "mekanism:blocks/factory/bottom"
     }
   },
   "variants": {
@@ -22,11 +22,11 @@
     "active": {
       "true": {
         "textures": {
-          "front": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryFrontOn",
-          "south": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryBackOn",
-          "west": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryRightOn",
-          "east": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryLeftOn",
-          "up": "mekanism:blocks/factory/advanced/injecting/AdvancedInjectingFactoryTopOn"
+          "front": "mekanism:blocks/factory/advanced/injecting/front_active",
+          "south": "mekanism:blocks/factory/advanced/injecting/back_active",
+          "west": "mekanism:blocks/factory/advanced/injecting/right_active",
+          "east": "mekanism:blocks/factory/advanced/injecting/left_active",
+          "up": "mekanism:blocks/factory/advanced/injecting/top_active"
         }
       },
       "false": {}

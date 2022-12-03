@@ -1,9 +1,5 @@
 package mekanism.common.integration;
 
-import appeng.api.AEApi;
-import appeng.api.definitions.IBlocks;
-import appeng.api.definitions.IItems;
-import appeng.api.definitions.IMaterials;
 import dan200.computercraft.api.ComputerCraftAPI;
 import ic2.api.recipe.IRecipeInput;
 import ic2.api.recipe.MachineRecipe;
@@ -51,7 +47,6 @@ public final class MekanismHooks {
     public static final String COFH_API_MOD_ID = "cofhapi";
     public static final String IC2_MOD_ID = "ic2";
     public static final String COMPUTERCRAFT_MOD_ID = "computercraft";
-    public static final String APPLIED_ENERGISTICS_2_MOD_ID = "appliedenergistics2";
     public static final String TESLA_MOD_ID = "tesla";
     public static final String MCMULTIPART_MOD_ID = "mcmultipart";
     public static final String REDSTONEFLUX_MOD_ID = "redstoneflux";
@@ -65,7 +60,6 @@ public final class MekanismHooks {
     public static final String MYSTICALAGRICULTURE_MOD_ID = "mysticalagriculture";
     public static final String CRAFTTWEAKER_MOD_ID = "crafttweaker";
 
-    public boolean AE2Loaded = false;
     public boolean BuildCraftLoaded = false;
     public boolean CCLoaded = false;
     public boolean CraftTweakerLoaded = false;
@@ -79,7 +73,6 @@ public final class MekanismHooks {
     public boolean TeslaLoaded = false;
 
     public void hookPreInit() {
-        AE2Loaded = Loader.isModLoaded(APPLIED_ENERGISTICS_2_MOD_ID);
         BuildCraftLoaded = Loader.isModLoaded(BUILDCRAFT_MOD_ID);
         CCLoaded = Loader.isModLoaded(COMPUTERCRAFT_MOD_ID);
         CraftTweakerLoaded = Loader.isModLoaded(CRAFTTWEAKER_MOD_ID);
@@ -102,19 +95,12 @@ public final class MekanismHooks {
         if (OCLoaded) {
             loadOCDrivers();
         }
-        if (AE2Loaded) {
-            registerAE2P2P();
-        }
     }
 
     public void hookPostInit() {
         if (IC2Loaded) {
             hookIC2Recipes();
             Mekanism.logger.info("Hooked into IC2 successfully.");
-        }
-        if (AE2Loaded) {
-            registerAE2Recipes();
-            Mekanism.logger.info("Hooked into AE2 successfully.");
         }
         if (CCLoaded) {
             loadCCPeripheralProviders();
@@ -232,102 +218,6 @@ public final class MekanismHooks {
         registerCyclicCombinerOreRecipe("dustDiamond", 3, end_stone, "end_diamond_ore");
         registerCyclicCombinerOreRecipe("dustGold", 8, end_stone, "end_gold_ore");
         registerCyclicCombinerOreRecipe("dustIron", 8, end_stone, "end_iron_ore");
-    }
-
-    private void registerAE2P2P() {
-        for (TransmitterType type : TransmitterType.values()) {
-            if (type.getTransmission().equals(TransmissionType.ITEM)) {
-                FMLInterModComms.sendMessage(APPLIED_ENERGISTICS_2_MOD_ID, "add-p2p-attunement-item", new ItemStack(MekanismBlocks.Transmitter, 1, type.ordinal()));
-            } else if (type.getTransmission().equals(TransmissionType.FLUID)) {
-                FMLInterModComms.sendMessage(APPLIED_ENERGISTICS_2_MOD_ID, "add-p2p-attunement-fluid", new ItemStack(MekanismBlocks.Transmitter, 1, type.ordinal()));
-            } else if (type.getTransmission().equals(TransmissionType.ENERGY)) {
-                FMLInterModComms.sendMessage(APPLIED_ENERGISTICS_2_MOD_ID, "add-p2p-attunement-fe-power", new ItemStack(MekanismBlocks.Transmitter, 1, type.ordinal()));
-            }
-        }
-    }
-
-    private void registerAE2Recipes() {
-        try {
-            IItems itemApi = AEApi.instance().definitions().items();
-            IMaterials materialsApi = AEApi.instance().definitions().materials();
-            IBlocks blocksApi = AEApi.instance().definitions().blocks();
-
-            Optional<ItemStack> certusCrystal = materialsApi.certusQuartzCrystal().maybeStack(1);
-            Optional<ItemStack> certusDust = materialsApi.certusQuartzDust().maybeStack(1);
-            Optional<ItemStack> pureCertus = materialsApi.purifiedCertusQuartzCrystal().maybeStack(1);
-            Optional<ItemStack> chargedCrystal = materialsApi.certusQuartzCrystalCharged().maybeStack(1);
-            Optional<ItemStack> fluixCrystal = materialsApi.fluixCrystal().maybeStack(1);
-            Optional<ItemStack> pureFluix = materialsApi.purifiedFluixCrystal().maybeStack(1);
-            Optional<ItemStack> fluixDust = materialsApi.fluixDust().maybeStack(1);
-            Optional<ItemStack> certusOre = blocksApi.quartzOre().maybeStack(1);
-            Optional<ItemStack> chargedOre = blocksApi.quartzOreCharged().maybeStack(1);
-            Optional<Item> crystalSeed = itemApi.crystalSeed().maybeItem();
-            Optional<ItemStack> pureNether = materialsApi.purifiedNetherQuartzCrystal().maybeStack(1);
-
-            if (certusCrystal.isPresent() && certusDust.isPresent()) {
-                RecipeHandler.addCrusherRecipe(certusCrystal.get().copy(), certusDust.get().copy());
-            }
-
-            if (chargedCrystal.isPresent() && certusDust.isPresent()) {
-                RecipeHandler.addCrusherRecipe(chargedCrystal.get().copy(), certusDust.get().copy());
-            }
-
-            if (fluixCrystal.isPresent() && fluixDust.isPresent()) {
-                RecipeHandler.addCrusherRecipe(fluixCrystal.get().copy(), fluixDust.get().copy());
-            }
-
-            if (certusOre.isPresent() && certusCrystal.isPresent()) {
-                ItemStack crystalOut = certusCrystal.get().copy();
-                crystalOut.setCount(4);
-                RecipeHandler.addEnrichmentChamberRecipe(certusOre.get().copy(), crystalOut);
-            }
-
-            if (chargedOre.isPresent() && chargedCrystal.isPresent()) {
-                ItemStack crystalOut = chargedCrystal.get().copy();
-                crystalOut.setCount(4);
-                RecipeHandler.addEnrichmentChamberRecipe(chargedOre.get().copy(), crystalOut);
-            }
-
-            if (certusDust.isPresent() && pureCertus.isPresent()) {
-                ItemStack crystalOut = pureCertus.get().copy();
-                RecipeHandler.addEnrichmentChamberRecipe(certusDust.get().copy(), crystalOut);
-            }
-
-            if (fluixDust.isPresent() && pureFluix.isPresent()) {
-                ItemStack crystalOut = pureFluix.get().copy();
-                RecipeHandler.addEnrichmentChamberRecipe(fluixDust.get().copy(), crystalOut);
-            }
-
-            if (fluixCrystal.isPresent() && pureFluix.isPresent()) {
-                RecipeHandler.addEnrichmentChamberRecipe(fluixCrystal.get().copy(), pureFluix.get().copy());
-            }
-
-            if (certusCrystal.isPresent() && pureCertus.isPresent()) {
-                RecipeHandler.addEnrichmentChamberRecipe(certusCrystal.get().copy(), pureCertus.get().copy());
-            }
-
-            if (crystalSeed.isPresent()) {
-                NonNullList<ItemStack> seeds = NonNullList.create();
-                //there appears to be no way to get this via api, so fall back to unloc names
-                crystalSeed.get().getSubItems(CreativeTabs.SEARCH, seeds);
-                //Crystal seeds use a meta AND NBT to determine growth state, so we need to ignore the NBT, and use the meta which should be fixed on what stage it's at
-                MachineInput.addCustomItemMatcher(crystalSeed.get().getClass(), (def, test) -> def.getItem() == test.getItem() && def.getMetadata() == test.getMetadata());
-                for (ItemStack stack : seeds) {
-                    String unloc = crystalSeed.get().getTranslationKey(stack);
-                    if (unloc.endsWith("certus") && pureCertus.isPresent()) {
-                        RecipeHandler.addEnrichmentChamberRecipe(stack, pureCertus.get().copy());
-                    } else if (unloc.endsWith("nether") && pureNether.isPresent()) {
-                        RecipeHandler.addEnrichmentChamberRecipe(stack, pureNether.get().copy());
-                    } else if (unloc.endsWith("fluix") && pureFluix.isPresent()) {
-                        RecipeHandler.addEnrichmentChamberRecipe(stack, pureFluix.get().copy());
-                    }
-                }
-            }
-        } catch (Exception e) {
-            Mekanism.logger.error("Something went wrong with ae2 integration", e);
-        } catch (IncompatibleClassChangeError e) {
-            Mekanism.logger.error("AE2 api has changed unexpectedly", e);
-        }
     }
 
     private void addMetallurgy() {

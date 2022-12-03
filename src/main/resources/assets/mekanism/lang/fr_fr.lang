@@ -156,6 +156,9 @@ tile.MachineBlock3.Oredictionificator.name=Oredictionificateur
 tile.MachineBlock3.ResistiveHeater.name=Chauffeur Resistif
 tile.MachineBlock3.FormulaicAssemblicator.name=Assembleur Formulaic
 
+# Machine Block Modded
+tile.MachineBlockModded.Factory.name=Usine
+
 # Plastic
 tile.PlasticBlock.name=Bloc de plastique
 tile.SlickPlasticBlock.name=Bloc de plastique lisse
